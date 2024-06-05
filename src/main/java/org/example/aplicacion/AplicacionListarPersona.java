@@ -12,7 +12,8 @@ public class AplicacionListarPersona {
         while (!salir){
             try{
                 var opcion = opcionesMenu(consola);
-
+                //salir = ejecutarOperacion(opcion,consola);
+                System.out.println();
             }catch (Exception e){
                 System.out.println("Error al digitar una opción del menú: "+e.getMessage());
             }
