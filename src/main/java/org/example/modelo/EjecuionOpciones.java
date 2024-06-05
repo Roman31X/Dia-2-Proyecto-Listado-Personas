@@ -9,9 +9,7 @@ public class EjecuionOpciones implements OpcionesMenu{
     public void listarPersona(List<Persona> personas) {
         if(!personas.isEmpty()){
             System.out.println("-----------------------LISTADO DE PERSONAS---------------------|");
-            for (Persona persona : personas) {
-                System.out.println(persona.toString());
-            }
+            personas.forEach(System.out::println);
         }else{
             System.out.println("|----La lista aun esta vacía debe registrar primero----|");
         }
@@ -49,10 +47,12 @@ public class EjecuionOpciones implements OpcionesMenu{
             var id = Integer.parseInt(consola.nextLine());
             for (Persona persona : personas) {
                 if(persona.getId() == id){
-                    personas.remove(persona);
+                    System.out.println("| Se elimino a: "+persona.toString());
                     System.out.println("|--¡Persona eliminada con éxito de la Lista!--|");
+                    personas.remove(persona);
                 }
             }
+
         }else{
             System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
         }
