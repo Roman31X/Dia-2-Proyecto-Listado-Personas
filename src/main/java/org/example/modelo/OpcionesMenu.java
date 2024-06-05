@@ -10,5 +10,5 @@ public interface OpcionesMenu {
 
     void actualizarPersona(Scanner consola, List<Persona> personas);
 
-    void EliminarPersona(Scanner consola, List<Persona> personas);
+    void eliminarPersona(Scanner consola, List<Persona> personas);
 }

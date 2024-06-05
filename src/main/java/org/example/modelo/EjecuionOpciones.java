@@ -7,13 +7,13 @@ public class EjecuionOpciones implements OpcionesMenu{
 
     @Override
     public void listarPersona(List<Persona> personas) {
-        if(personas.size() != 0){
+        if(!personas.isEmpty()){
             System.out.println("-----------------------LISTADO DE PERSONAS---------------------|");
             for (Persona persona : personas) {
                 System.out.println(persona.toString());
             }
         }else{
-            System.out.println("La lista aun esta vacía debe registrar primero");
+            System.out.println("|----La lista aun esta vacía debe registrar primero----|");
         }
     }
 
@@ -34,23 +34,27 @@ public class EjecuionOpciones implements OpcionesMenu{
 
     @Override
     public void actualizarPersona(Scanner consola, List<Persona> personas) {
+        if(!personas.isEmpty()){
 
+        }else{
+            System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
+        }
     }
 
     @Override
-    public void EliminarPersona(Scanner consola, List<Persona> personas) {
-        if(personas.size() != 0){
+    public void eliminarPersona(Scanner consola, List<Persona> personas) {
+        if(!personas.isEmpty()){
             System.out.println("|--------ELIMINACIÓN POR ID DE PERSONA--------|");
             System.out.print("Ingrese ID a eliminar:");
             var id = Integer.parseInt(consola.nextLine());
             for (Persona persona : personas) {
                 if(persona.getId() == id){
                     personas.remove(persona);
+                    System.out.println("|--¡Persona eliminada con éxito de la Lista!--|");
                 }
             }
-            System.out.println("|--¡Persona eliminada con éxito de la Lista!--|");
         }else{
-            System.out.println("La lista aun esta vacía debe registrar primero");
+            System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
         }
     }
 }
