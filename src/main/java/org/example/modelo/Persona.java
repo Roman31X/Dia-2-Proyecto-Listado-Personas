@@ -5,10 +5,10 @@ public class Persona {
     private String nombre;
     private String telefono;
     private String email;
-    private static int numeroPersonas = 0;
+    private static int numeroPersonas = 1;
 
     public Persona() {
-        this.id = ++Persona.numeroPersonas;
+        this.id = Persona.numeroPersonas++;
     }
 
     public Persona(String nombre, String telefono, String email) {

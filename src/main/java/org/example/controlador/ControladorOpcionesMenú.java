@@ -14,6 +14,15 @@ public class ControladorOpcionesMenú {
             case 1 ->{
                 accion.listarPersona(personas);
             }
+            case 2 -> {
+                accion.agregarPersona(consola,personas);
+            }
+            case 3 -> {
+
+            }
+            case 4 -> {
+                accion.EliminarPersona(consola,personas);
+            }
             case 5 -> {
                 return true;
             }
