@@ -22,7 +22,6 @@ public class ControladorOpcionesMenú {
             }
             case 4 -> {
                 accion.eliminarPersona(consola, personas);
-                //System.out.println((respuesta)?"|--¡Persona eliminada con éxito de la Lista!--|":"|--¡Persona no encontrada en la Lista!--|");
             }
             case 5 ->{
                 accion.buscarPerona(consola, personas);

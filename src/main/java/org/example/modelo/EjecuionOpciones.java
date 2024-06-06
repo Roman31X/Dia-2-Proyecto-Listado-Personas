@@ -33,7 +33,23 @@ public class EjecuionOpciones implements OpcionesMenu{
     @Override
     public void actualizarPersona(Scanner consola, List<Persona> personas) {
         if(!personas.isEmpty()){
-
+            System.out.println("|---------ACTUALIZAR REGISTRO PERSONA---------|");
+            System.out.print("Ingrese ID:");
+            var id = Integer.parseInt(consola.nextLine());
+            for (Persona persona:personas) {
+                if(persona.getId() == id){
+                    System.out.print("Ingrese Nombre: ");
+                    var nombre = consola.nextLine();
+                    System.out.print("Ingrese Teléfono: ");
+                    var telefono = consola.nextLine();
+                    System.out.print("Ingrese Email: ");
+                    var email = consola.nextLine();
+                    persona.setNombre(nombre);
+                    persona.setTelefono(telefono);
+                    persona.setEmail(email);
+                    break;
+                }
+            }
         }else{
             System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
         }
@@ -48,6 +64,7 @@ public class EjecuionOpciones implements OpcionesMenu{
             for (Persona persona : personas) {
                 if(persona.getId() == id){
                     System.out.println("| Se elimino a: "+persona.toString());
+                    System.out.println("|--¡Persona eliminada con éxito de la Lista!--|");
                     personas.remove(persona);
                     break;
                 }
