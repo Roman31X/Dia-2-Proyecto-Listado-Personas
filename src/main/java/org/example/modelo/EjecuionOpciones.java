@@ -36,6 +36,7 @@ public class EjecuionOpciones implements OpcionesMenu{
             System.out.println("|---------ACTUALIZAR REGISTRO PERSONA---------|");
             System.out.print("Ingrese ID:");
             var id = Integer.parseInt(consola.nextLine());
+            var logrado = false;
             for (Persona persona:personas) {
                 if(persona.getId() == id){
                     System.out.print("Ingrese Nombre: ");
@@ -47,9 +48,12 @@ public class EjecuionOpciones implements OpcionesMenu{
                     persona.setNombre(nombre);
                     persona.setTelefono(telefono);
                     persona.setEmail(email);
+                    logrado = true;
                     break;
                 }
             }
+            System.out.println((logrado)?"|--------Datos de persona actualizados con éxito--------|":
+                    "|----ID no encontrado en la Lista vuelva intentarlo----| ");
         }else{
             System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
         }
@@ -61,14 +65,17 @@ public class EjecuionOpciones implements OpcionesMenu{
             System.out.println("|--------ELIMINACIÓN POR ID DE PERSONA--------|");
             System.out.print("Ingrese ID a eliminar:");
             var id = Integer.parseInt(consola.nextLine());
+            var logrado = false;
             for (Persona persona : personas) {
                 if(persona.getId() == id){
                     System.out.println("| Se elimino a: "+persona.toString());
-                    System.out.println("|--¡Persona eliminada con éxito de la Lista!--|");
                     personas.remove(persona);
+                    logrado = true;
                     break;
                 }
             }
+            System.out.println((logrado)?"|------------Datos de persona eliminados con éxito------------|":
+                    "|----ID no encontrado en la Lista vuelva intentarlo----| ");
         }else{
             System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
         }
@@ -80,12 +87,16 @@ public class EjecuionOpciones implements OpcionesMenu{
             System.out.println("|--------BUSCAR PERSONA POR ID--------|");
             System.out.print("Ingrese ID:");
             var id = Integer.parseInt(consola.nextLine());
+            var logrado = false;
             for (Persona persona : personas) {
                 if(persona.getId() == id){
                     System.out.println(persona.toString());
+                    logrado = true;
                     break;
                 }
             }
+            System.out.println((logrado)?"|--------------------Búsqueda exitosa--------------------|":
+                    "|----ID no encontrado en la Lista vuelva intentarlo----| ");
         }else{
             System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
         }
