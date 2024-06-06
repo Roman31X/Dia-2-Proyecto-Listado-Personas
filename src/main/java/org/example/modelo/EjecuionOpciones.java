@@ -48,13 +48,30 @@ public class EjecuionOpciones implements OpcionesMenu{
             for (Persona persona : personas) {
                 if(persona.getId() == id){
                     System.out.println("| Se elimino a: "+persona.toString());
-                    System.out.println("|--¡Persona eliminada con éxito de la Lista!--|");
                     personas.remove(persona);
+                    break;
                 }
             }
-
         }else{
             System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
         }
+    }
+
+    @Override
+    public void buscarPerona(Scanner consola, List<Persona> personas) {
+        if(!personas.isEmpty()){
+            System.out.println("|--------BUSCAR PERSONA POR ID--------|");
+            System.out.print("Ingrese ID:");
+            var id = Integer.parseInt(consola.nextLine());
+            for (Persona persona : personas) {
+                if(persona.getId() == id){
+                    System.out.println(persona.toString());
+                    break;
+                }
+            }
+        }else{
+            System.out.println("|----La lista aun esta vacía debe registrar primero-----|");
+        }
+
     }
 }

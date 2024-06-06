@@ -13,9 +13,10 @@ public class MensajesInterfazConsola {
                          | [2] - AGREGAR PERSONA    |
                          | [3] - ACTUALIZAR PERSONA |
                          | [4] - ELIMINAR PERSONA   |
-                         | [5] - SALIR APP          |
+                         | [5] - BUSCAR PERSONA ID  |
+                         | [6] - SALIR APP          |
                          |--------------------------|"""+"\n");
-        System.out.print("| Ingrese opción:\s");
+        System.out.print("| Ingrese opción:  ");
         return Integer.parseInt(consola.nextLine());
     }
 }
