@@ -21,6 +21,16 @@
             <version>4.13</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <!-- La librería de MOCKITO nos permite realizar pruebas creando un entorno de simulacion con carga
+         de información en los objetos -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>
